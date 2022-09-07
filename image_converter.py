@@ -48,6 +48,7 @@ while True:
         break
     elif selection == 2:
         conversion_type = ".png"
+        break
     elif selection == 3:
         conversion_type = ".tga"
         break
