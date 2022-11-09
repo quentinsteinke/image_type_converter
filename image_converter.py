@@ -27,7 +27,6 @@ except FileNotFoundError:
     try:
         os.makedirs("converted")
         print("makeing converted")
-        print("Converting " + str(len(images)) + " images", images)
     except FileExistsError:
         print("Converted folder already exists")
 
@@ -35,7 +34,11 @@ except:
     print("No 'convert' folder found")
 
 while True:
+    print("Converting " + str(len(images)) + " images")
+    for i in images:
+        print(i)
     print("Convert to: (1)jpg (2)png (3)tga")
+
     selection = input()
 
     try:
@@ -92,17 +95,19 @@ if convert_name == "y":
         num += 1
 
 if convert_name == "n":
+    image_sufix = [".png", ".jpg", ".tif", ".tga", ".TGA"]
+
     for i in images:
         i = image_path + i
         im = Image.open(i)
         original_name = im.filename
         original_name = original_name.replace(image_path, "")
-        original_name = original_name.replace(".png", "")
-        original_name = original_name.replace(".jpg", "")
-        original_name = original_name.replace(".tif", "")
-        original_name = original_name.replace(".tga", "")
+
+        for i in image_sufix:
+            original_name = original_name.replace(i, "")
+
         con_im = im.convert(conversion_method)
-        print(make_converted_dir)
+        print(original_name + str(conversion_type))
         con_im.save(make_converted_dir + original_name + str(conversion_type))
 
 print("All done!")
