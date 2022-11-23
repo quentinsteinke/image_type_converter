@@ -1,8 +1,6 @@
-# Converting .png to .jpg images
+# Converting Image Types
 
 ## Setup
 * Put the python script ina folder with a subfolder called "convert"
-* Any .png file put in the "convert" folder will be converted once you run the python file
-
-## To-Do
-* Ability to choose between .jpg and .png conversion
+* Run the python script and select the image type you want to convert the images into
+* You have the option to rename it or leave the names the same
