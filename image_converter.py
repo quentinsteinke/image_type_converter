@@ -4,7 +4,7 @@ import os
 image_path = ".\\convert\\"
 new_name = "Converted_Image"
 make_converted_dir = "no value set"
-conversion_method = "RGB"
+conversion_method = "RGBA"
 conversion_type = ".jpg"
 
 # See if you need forward-slash or back-slash for you os
